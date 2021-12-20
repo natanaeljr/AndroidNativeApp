@@ -1,0 +1,25 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    ndkVersion '23.1.7779620'
+
+    defaultConfig {
+        applicationId = 'com.example.nativeapp'
+        minSdkVersion 28
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        externalNativeBuild {
+            cmake {
+                arguments '-DANDROID_STL=c++_static'
+            }
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            version '3.18.1'
+            path 'src/main/cpp/CMakeLists.txt'
+        }
+    }
+}
