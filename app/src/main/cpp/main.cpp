@@ -1,10 +1,14 @@
 #include <android_native_app_glue.h>
 #include <stb/stb_image.h>
 #include <imgui/imgui.h>
+#include <spdlog/sinks/android_sink.h>
 
 void android_main(struct android_app* state) {
     stbi_image_free(NULL);
     ImGui::ShowDemoWindow();
+    std::string tag = "spdlog-android";
+    auto android_logger = spdlog::android_logger_mt("android", tag);
+    android_logger->critical("Use \"adb shell logcat\" to view this message.");
     // Loop waiting for stuff to do.
     while (true) {
         // Read all pending events.

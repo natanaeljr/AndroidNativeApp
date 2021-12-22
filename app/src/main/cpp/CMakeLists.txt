@@ -13,6 +13,8 @@ add_library(native_app_glue STATIC
 find_package(stb 0.8.1 EXACT REQUIRED COMPONENTS stb_image)
 # ImGui for graphical user interface
 find_package(imgui 1.85 EXACT REQUIRED)
+# SPDLog for fast C++ logging library
+find_package(spdlog 1.9.2 EXACT REQUIRED)
 
 # Native App
 add_library(nativeapp SHARED main.cpp)
@@ -27,5 +29,6 @@ target_link_libraries(nativeapp
     imgui::imgui
     imgui::imgui_opengl
     imgui::imgui_android
+    spdlog::spdlog
     log)
 

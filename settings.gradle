@@ -9,4 +9,7 @@ includeBuild("ndkports") {
     dependencySubstitution {
         substitute(module("com.android.ndkports:imgui")).with(project(":imgui"))
     }
+    dependencySubstitution {
+        substitute(module("com.android.ndkports:spdlog")).with(project(":spdlog"))
+    }
 }

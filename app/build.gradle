@@ -28,4 +28,5 @@ android {
 dependencies {
   implementation "com.android.ndkports:stb"
   implementation "com.android.ndkports:imgui"
+  implementation "com.android.ndkports:spdlog"
 }
