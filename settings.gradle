@@ -6,4 +6,7 @@ includeBuild("ndkports") {
     dependencySubstitution {
         substitute(module("com.android.ndkports:stb")).with(project(":stb"))
     }
+    dependencySubstitution {
+        substitute(module("com.android.ndkports:imgui")).with(project(":imgui"))
+    }
 }

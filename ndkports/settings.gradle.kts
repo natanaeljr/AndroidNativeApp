@@ -11,3 +11,4 @@ pluginManagement {
 }
 
 include("stb")
+include("imgui")
