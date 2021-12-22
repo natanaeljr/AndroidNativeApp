@@ -3,6 +3,7 @@
 #include <imgui/imgui.h>
 #include <spdlog/sinks/android_sink.h>
 #include <glm/vec3.hpp>
+#include <entt/entt.hpp>
 
 void android_main(struct android_app* state) {
     stbi_image_free(NULL);
@@ -11,6 +12,7 @@ void android_main(struct android_app* state) {
     auto android_logger = spdlog::android_logger_mt("android", tag);
     android_logger->critical("Use \"adb shell logcat\" to view this message.");
     glm::vec3();
+    entt::registry registry;
     // Loop waiting for stuff to do.
     while (true) {
         // Read all pending events.

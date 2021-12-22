@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.6)
 project(NativeApp)
 
+set(CMAKE_CXX_STANDARD 17)
+
 # Export ANativeActivity_onCreate(),
 # Refer to: https://github.com/android-ndk/ndk/issues/381.
 set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -u ANativeActivity_onCreate")
@@ -17,6 +19,8 @@ find_package(imgui 1.85 EXACT REQUIRED)
 find_package(spdlog 1.9.2 EXACT REQUIRED)
 # GLM for opengl mathematics library
 find_package(glm 0.9.9.9 EXACT REQUIRED)
+# EnTT for Entity Component System library
+find_package(EnTT 3.5.2 EXACT REQUIRED)
 
 # Native App
 add_library(nativeapp SHARED main.cpp)
@@ -33,5 +37,6 @@ target_link_libraries(nativeapp
     imgui::imgui_opengl
     imgui::imgui_android
     spdlog::spdlog
+    EnTT::EnTT
     log)
 

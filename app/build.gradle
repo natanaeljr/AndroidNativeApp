@@ -30,4 +30,5 @@ dependencies {
   implementation "com.android.ndkports:imgui"
   implementation "com.android.ndkports:spdlog"
   implementation "com.android.ndkports:glm"
+  implementation "com.android.ndkports:EnTT"
 }
