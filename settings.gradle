@@ -12,4 +12,7 @@ includeBuild("ndkports") {
     dependencySubstitution {
         substitute(module("com.android.ndkports:spdlog")).with(project(":spdlog"))
     }
+    dependencySubstitution {
+        substitute(module("com.android.ndkports:glm")).with(project(":glm"))
+    }
 }

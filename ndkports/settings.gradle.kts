@@ -13,3 +13,4 @@ pluginManagement {
 include("stb")
 include("imgui")
 include("spdlog")
+include("glm")
