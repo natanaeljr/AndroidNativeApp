@@ -18,4 +18,7 @@ includeBuild("ndkports") {
     dependencySubstitution {
         substitute(module("com.android.ndkports:EnTT")).with(project(":EnTT"))
     }
+    dependencySubstitution {
+        substitute(module("com.android.ndkports:GSL")).with(project(":Microsoft.GSL"))
+    }
 }

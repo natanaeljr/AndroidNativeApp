@@ -31,4 +31,5 @@ dependencies {
   implementation "com.android.ndkports:spdlog"
   implementation "com.android.ndkports:glm"
   implementation "com.android.ndkports:EnTT"
+  implementation "com.android.ndkports:GSL"
 }

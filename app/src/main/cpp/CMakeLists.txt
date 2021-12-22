@@ -21,6 +21,8 @@ find_package(spdlog 1.9.2 EXACT REQUIRED)
 find_package(glm 0.9.9.9 EXACT REQUIRED)
 # EnTT for Entity Component System library
 find_package(EnTT 3.5.2 EXACT REQUIRED)
+# GSL for types and functions of C++ Core Guidelines
+find_package(Microsoft.GSL 3.1.0 EXACT REQUIRED)
 
 # Native App
 add_library(nativeapp SHARED main.cpp)
@@ -38,5 +40,6 @@ target_link_libraries(nativeapp
     imgui::imgui_android
     spdlog::spdlog
     EnTT::EnTT
+    Microsoft.GSL::GSL
     log)
 
