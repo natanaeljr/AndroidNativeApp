@@ -1,2 +1,9 @@
 rootProject.name = 'NativeApp'
+
 include ':app'
+
+includeBuild("ndkports") {
+    dependencySubstitution {
+        substitute(module("com.android.ndkports:stb")).with(project(":stb"))
+    }
+}

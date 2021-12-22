@@ -9,6 +9,9 @@ set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -u ANativeActivity_o
 add_library(native_app_glue STATIC
     ${ANDROID_NDK}/sources/android/native_app_glue/android_native_app_glue.c)
 
+# STB for image loading/decoding
+find_package(stb 0.8.1 EXACT REQUIRED COMPONENTS stb_image)
+
 # Native App
 add_library(nativeapp SHARED main.cpp)
 target_include_directories(nativeapp PRIVATE
@@ -18,5 +21,6 @@ target_link_libraries(nativeapp
     native_app_glue
     EGL
     GLESv1_CM
+    stb::stb_image
     log)
 

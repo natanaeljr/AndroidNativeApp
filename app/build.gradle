@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 30
     ndkVersion '23.1.7779620'
+    buildFeatures.prefab = true
 
     defaultConfig {
         applicationId = 'com.example.nativeapp'
@@ -22,4 +23,8 @@ android {
             path 'src/main/cpp/CMakeLists.txt'
         }
     }
+}
+
+dependencies {
+  implementation "com.android.ndkports:stb"
 }
