@@ -21,4 +21,7 @@ includeBuild("ndkports") {
     dependencySubstitution {
         substitute(module("com.android.ndkports:GSL")).with(project(":Microsoft.GSL"))
     }
+    dependencySubstitution {
+        substitute(module("com.android.ndkports:assimp")).with(project(":assimp"))
+    }
 }

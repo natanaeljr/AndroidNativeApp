@@ -5,6 +5,9 @@
 #include <glm/vec3.hpp>
 #include <entt/entt.hpp>
 #include <gsl/gsl>
+#include <assimp/config.h>
+#include <AndroidJNIIOSystem.h>
+#include <assimp/Importer.hpp>
 
 void android_main(struct android_app* state) {
     stbi_image_free(NULL);
@@ -15,6 +18,11 @@ void android_main(struct android_app* state) {
     glm::vec3();
     entt::registry registry;
     gsl::finally([]{});
+    Assimp::Importer* importer = new Assimp::Importer();
+    Assimp::AndroidJNIIOSystem *ioSystem = new Assimp::AndroidJNIIOSystem(state->activity);
+    if ( nullptr != ioSystem ) {
+      importer->SetIOHandler(ioSystem);
+    }
     // Loop waiting for stuff to do.
     while (true) {
         // Read all pending events.

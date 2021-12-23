@@ -32,4 +32,5 @@ dependencies {
   implementation "com.android.ndkports:glm"
   implementation "com.android.ndkports:EnTT"
   implementation "com.android.ndkports:GSL"
+  implementation "com.android.ndkports:assimp"
 }

@@ -23,6 +23,8 @@ find_package(glm 0.9.9.9 EXACT REQUIRED)
 find_package(EnTT 3.5.2 EXACT REQUIRED)
 # GSL for types and functions of C++ Core Guidelines
 find_package(Microsoft.GSL 3.1.0 EXACT REQUIRED)
+# Assimp for 3D model loading
+find_package(assimp 5.1.4 EXACT REQUIRED)
 
 # Native App
 add_library(nativeapp SHARED main.cpp)
@@ -41,5 +43,8 @@ target_link_libraries(nativeapp
     spdlog::spdlog
     EnTT::EnTT
     Microsoft.GSL::GSL
+    assimp::assimp
+    assimp::android_jniiosystem
+    assimp::zlibstatic
     log)
 
